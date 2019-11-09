@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.MyAdsPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <ListView x:Name="LvVehicles"
+                      ItemSelected="LvVehicles_ItemSelected"
+                      HasUnevenRows="True"
+                      SeparatorColor="#707070"
+                      Footer=""
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="15"
+                                  Margin="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="7*" />
+                                </Grid.ColumnDefinitions>
+                                <forms:CachedImage Source="{Binding FullImageUrl}"
+                                                   Grid.Row="0"
+                                                   Grid.Column="0"
+                                                   Grid.RowSpan="4"
+                                                   HeightRequest="100"
+                                                   Aspect="AspectFit"
+                                                   LoadingPlaceholder="placeholder.png" />
+
+                                <StackLayout Orientation="Horizontal"
+                                             Grid.Row="0"
+                                             Grid.Column="1">
+                                    <Frame BackgroundColor="#001970"
+                                           Padding="10,0,10,0">
+                                        <Label TextColor="White"
+                                               Text="{Binding IsFeaturedAd}" />
+                                    </Frame>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="1"
+                                             Grid.Column="1"
+                                             Orientation="Horizontal">
+                                    <Label Text="{Binding price, StringFormat='${0}'}"
+                                           TextColor="#303F9F" />
+                                    <Label Text="{Binding AdPostedDate}"
+                                           TextColor="#303F9F"
+                                           HorizontalOptions="EndAndExpand" />
+                                </StackLayout>
+
+                                <Label Text="{Binding title}"
+                                       TextColor="#303F9F"
+                                       Grid.Row="2"
+                                       Grid.Column="1" />
+                                <StackLayout Orientation="Horizontal"
+                                             Grid.Row="3"
+                                             Grid.Column="1">
+                                    <Image Source="locationIcon.png" />
+                                    <Label Text="{Binding location}"
+                                           LineBreakMode="TailTruncation"
+                                           VerticalTextAlignment="Center"
+                                           TextColor="#303F9F" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

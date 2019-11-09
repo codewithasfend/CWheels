@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.ExplorePage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Frame Padding="10">
+                <StackLayout Spacing="20"
+                             Orientation="Horizontal">
+                    <Image Source="searchIcon.png"
+                           Aspect="AspectFit" />
+                    <Label FontSize="Small"
+                           TextColor="#303F9F"
+                           VerticalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Text="Search Vehicle" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="TapSearch" Tapped="TapSearch_Tapped" />
+                </Frame.GestureRecognizers>
+            </Frame>
+            <CollectionView x:Name="CvVehicles"
+                            SelectionMode="Single"
+                            SelectionChanged="CvVehicles_SelectionChanged">
+                <CollectionView.Header>
+                    <StackLayout Spacing="20"
+                                 Padding="5">
+                        <Label TextColor="#303F9F"
+                               FontSize="Small"
+                               Margin="10,0,0,0"
+                               Text="Browse Categories" />
+                        <FlexLayout JustifyContent="SpaceEvenly">
+                            <Image HeightRequest="60"
+                                   WidthRequest="60"
+                                   Source="bike.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TapBike" Tapped="TapBike_Tapped" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image HeightRequest="60"
+                                   WidthRequest="60"
+                                   Source="car.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TapCar" Tapped="TapCar_Tapped" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image HeightRequest="60"
+                                   WidthRequest="60"
+                                   Source="truck.png">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TapTruck" Tapped="TapTruck_Tapped" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </FlexLayout>
+                        <Label TextColor="#303F9F"
+                               FontSize="Small"
+                               Margin="10,0,0,0"
+                               Text="Fresh Recommendations" />
+                    </StackLayout>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView Padding="10">
+                            <Frame Padding="0"
+                                   HasShadow="True"
+                                   CornerRadius="5">
+                                <StackLayout Spacing="25">
+                                    <forms:CachedImage Aspect="AspectFill"
+                                                       LoadingPlaceholder="placeholder.png"
+                                                       Source="{Binding FullImageUrl}"/>
+                                    <Label Margin="0,0,0,20"
+                                           TextColor="#303F9F"
+                                           HorizontalTextAlignment="Center"
+                                           HorizontalOptions="Center"
+                                           Text="{Binding title}"/>
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

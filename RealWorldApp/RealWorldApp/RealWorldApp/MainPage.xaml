@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.MainPage">
+
+    <StackLayout>
+        <!--<ffimageloading:CachedImage HeightRequest="100"
+                                    WidthRequest="100"
+                                    Source="https://images-na.ssl-images-amazon.com/images/I/81-ftUPmZjL._SX425_.jpg"
+                                    CacheType="All">
+            <ffimageloading:CachedImage.Transformations>
+                <transformations:CircleTransformation />
+            </ffimageloading:CachedImage.Transformations>
+        </ffimageloading:CachedImage>-->
+
+        <Entry Placeholder="Enter User Name"
+               x:Name="EntUserName" />
+        <Button Text="Save"
+                x:Name="BtnSave"
+                Clicked="BtnSave_Clicked"/>
+        <Button Text="Retrieve"
+                x:Name="BtnRetrieve"
+                Clicked="BtnRetrieve_Clicked"/>
+        <Label x:Name="LblUserName"/>
+
+
+    </StackLayout>
+
+</ContentPage>

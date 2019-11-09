@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="RealWorldApp.Pages.SellPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="10">
+                <Label HorizontalTextAlignment="Center"
+                       FontSize="Large"
+                       Text="What Are You Offering ?" />
+                <BoxView HeightRequest="1"
+                         BackgroundColor="Black" />
+                <StackLayout Margin="20">
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Condition" />
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="CenterAndExpand">
+                        <Frame HasShadow="False"
+                               CornerRadius="0"
+                               BorderColor="#303F9F"
+                               Padding="50,10,50,10"
+                               Margin="10"
+                               x:Name="FrameUsed">
+                            <Label Text="Used"
+                                   TextColor="Black"
+                                   x:Name="LblUsed" />
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="TapUsed" Tapped="TapUsed_Tapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                        <Frame HasShadow="False"
+                               CornerRadius="0"
+                               BorderColor="#303F9F"
+                               Padding="50,10,50,10"
+                               Margin="10"
+                               x:Name="FrameNew">
+                            <Label Text="New"
+                                   TextColor="Black"
+                                   x:Name="LblNew" />
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="TapNew" Tapped="TapNew_Tapped" />
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </StackLayout>
+
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Title*" />
+                    <Entry x:Name="EntTitle" />
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Price*" />
+                    <Entry x:Name="EntPrice" />
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Categories*" />
+                    <Picker Title="Choose Category"
+                            x:Name="PickerCategory"
+                            ItemDisplayBinding="{Binding type}"
+                            SelectedIndexChanged="PickerCategory_SelectedIndexChanged"/>
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Engine*" />
+                    <Entry x:Name="EntEngine" />
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Model No*" />
+                    <Entry x:Name="EntModel" />
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Color*" />
+                    <Entry x:Name="EntColor" />
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Company*" />
+                    <Entry x:Name="EntCompany" />
+
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Location Area*" />
+                    <Entry x:Name="EntLocation" />
+                    <Label HorizontalTextAlignment="Start"
+                           FontSize="Medium"
+                           Text="Description*" />
+                    <Editor HeightRequest="100"
+                            AutoSize="Disabled"
+                            Placeholder="Type the description of your vehicle"
+                            x:Name="EdiDescription" />
+                </StackLayout>
+                <Button Text="Post Add"
+                        TextColor="White"
+                        BackgroundColor="#303F9F"
+                        x:Name="BtnSell"
+                        Clicked="BtnSell_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             ios:Page.UseSafeArea="True"
+             x:Class="RealWorldApp.Pages.ItemDetailPage">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+                <Grid HeightRequest="250"
+                      RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="6.5*" />
+                        <RowDefinition Height="1.5*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="9*" />
+                        <ColumnDefinition Width="1.5*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView BackgroundColor="Black"
+                             Opacity="0.3"
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             Grid.RowSpan="3"
+                             Grid.ColumnSpan="3" />
+                    <CarouselView x:Name="CrvImages"
+                                  Grid.Row="0"
+                                  Grid.Column="0"
+                                  Grid.RowSpan="3"
+                                  Grid.ColumnSpan="3"
+                                  Scrolled="CrvImages_Scrolled">
+
+
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <forms:CachedImage Source="{Binding FullImageUrl}" />
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <ImageButton Grid.Row="0"
+                                 Grid.Column="0"
+                                 Margin="10,20,0,0"
+                                 BackgroundColor="Transparent"
+                                 Source="closeRoundedIcon.png"
+                                 x:Name="BtnBack" Clicked="BtnBack_Clicked"/>
+                    <Label BackgroundColor="#303F9F"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Medium"
+                           TextColor="White"
+                           x:Name="LblCount"
+                           Grid.Row="2"
+                           Grid.Column="2" />
+                </Grid>
+                <StackLayout Spacing="20"
+                             Margin="20">
+                    <Label x:Name="LblPrice"
+                           FontSize="Large"
+                           TextColor="#303F9F" />
+                    <Label x:Name="LblTitle"
+                           FontSize="Small"
+                           TextColor="#303F9F" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0"
+                               Source="locationIcon.png" />
+                        <Label Grid.Column="1"
+                               x:Name="LblLocation"
+                               LineBreakMode="WordWrap"
+                               TextColor="#303F9F" />
+                    </Grid>
+                </StackLayout>
+                <BoxView BackgroundColor="#707070"
+                         HeightRequest="1" />
+                <StackLayout Spacing="20"
+                             Margin="20">
+                    <Label Text="Details"
+                           FontSize="Large"
+                           TextColor="#303F9F" />
+                    <Grid ColumnSpacing="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="6*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Model No"
+                               TextColor="#303F9F"
+                               Grid.Row="0"
+                               Grid.Column="0" />
+                        <Label x:Name="LblModelNo"
+                               TextColor="#303F9F"
+                               Grid.Row="0"
+                               Grid.Column="1" />
+                        <Label Text="Company"
+                               TextColor="#303F9F"
+                               Grid.Row="1"
+                               Grid.Column="0" />
+                        <Label x:Name="LblCompany"
+                               TextColor="#303F9F"
+                               Grid.Row="1"
+                               Grid.Column="1" />
+                        <Label Text="Color"
+                               TextColor="#303F9F"
+                               Grid.Row="2"
+                               Grid.Column="0" />
+                        <Label x:Name="LblColor"
+                               TextColor="#303F9F"
+                               Grid.Row="2"
+                               Grid.Column="1" />
+                        <Label Text="Condition"
+                               TextColor="#303F9F"
+                               Grid.Row="3"
+                               Grid.Column="0" />
+                        <Label x:Name="LblCondition"
+                               TextColor="#303F9F"
+                               Grid.Row="3"
+                               Grid.Column="1" />
+                        <Label Text="Engine"
+                               TextColor="#303F9F"
+                               Grid.Row="4"
+                               Grid.Column="0" />
+                        <Label x:Name="LblEngine"
+                               TextColor="#303F9F"
+                               Grid.Row="4"
+                               Grid.Column="1" />
+
+                    </Grid>
+                </StackLayout>
+                <BoxView BackgroundColor="#707070"
+                         HeightRequest="1" />
+                <StackLayout Spacing="20"
+                             Margin="20">
+                    <Label Text="Description"
+                           FontSize="Large"
+                           TextColor="#303F9F" />
+                    <Label x:Name="LblDescription"
+                           TextColor="#303F9F" />
+                </StackLayout>
+
+                <BoxView BackgroundColor="#707070"
+                         HeightRequest="1" />
+                <StackLayout Spacing="20"
+                             Margin="20">
+                    <Label Text="Seller"
+                           FontSize="Large"
+                           TextColor="#303F9F" />
+                    <forms:CachedImage HorizontalOptions="Start"
+                                       HeightRequest="80"
+                                       WidthRequest="80"
+                                       LoadingPlaceholder="userPlaceholder.png"
+                                       x:Name="ImgUser">
+                        <forms:CachedImage.Transformations>
+                            <transformations:CircleTransformation />
+                        </forms:CachedImage.Transformations>
+                    </forms:CachedImage>
+
+                </StackLayout>
+                <Grid ColumnSpacing="2"
+                      VerticalOptions="EndAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Text="EMAIL"
+                            TextColor="White"
+                            BackgroundColor="#303F9F"
+                            Grid.Column="0"
+                            x:Name="BtnEmail" Clicked="BtnEmail_Clicked"/>
+                    <Button Text="SMS"
+                            TextColor="White"
+                            BackgroundColor="#303F9F"
+                            Grid.Column="1"
+                            x:Name="BtnSms" Clicked="BtnSms_Clicked"/>
+                    <Button Text="CALL"
+                            TextColor="White"
+                            BackgroundColor="#303F9F"
+                            Grid.Column="2"
+                            x:Name="BtnCall" Clicked="BtnCall_Clicked" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             mc:Ignorable="d"
+             iOsSpecific:Page.UseSafeArea="True"
+             x:Class="RealWorldApp.Pages.SearchPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="SearchBarVehicle"
+                       Placeholder="Search Vehicle"
+                       TextChanged="SearchBarVehicle_TextChanged"/>
+            <ListView  HasUnevenRows="False"
+                       HorizontalOptions="StartAndExpand"
+                       SeparatorVisibility="None"
+                       VerticalOptions="StartAndExpand"
+                       RowHeight="60"
+                       HeightRequest="300"
+                       x:Name="LvSearch"
+                       ItemSelected="LvSearch_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10"
+                                         BackgroundColor="White">
+                                <Label FontSize="Medium"
+                                       VerticalOptions="CenterAndExpand"
+                                       TextColor="Black"
+                                       Text="{Binding title}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

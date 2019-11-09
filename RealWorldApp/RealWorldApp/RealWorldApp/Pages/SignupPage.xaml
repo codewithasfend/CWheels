@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.SignupPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="15"
+                         Margin="25">
+                <Label TextColor="#303F9F"
+                       Text="SIGN UP"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       Margin="30" />
+                <Entry Placeholder="User Name"
+                       PlaceholderColor="#666AD1"
+                       TextColor="#303F9F"
+                       x:Name="EntName"
+                       Keyboard="Text" />
+                <Entry Placeholder="Email"
+                       PlaceholderColor="#666AD1"
+                       TextColor="#303F9F"
+                       x:Name="EntEmail"
+                       Keyboard="Email" />
+                <Entry Placeholder="Password"
+                       PlaceholderColor="#666AD1"
+                       TextColor="#303F9F"
+                       IsPassword="True"
+                       x:Name="EntPassword"
+                       Keyboard="Default" />
+                <Button Text="CONTINUE"
+                        TextColor="White"
+                        BackgroundColor="#303F9F"
+                        x:Name="BtnSignUp" Clicked="BtnSignUp_Clicked"/>
+                <Label Text="Already have an account?"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#666AD1" />
+                <Button Text="Login"
+                        BackgroundColor="#666AD1"
+                        TextColor="White"
+                        x:Name="BtnLogin" 
+                        Clicked="BtnLogin_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

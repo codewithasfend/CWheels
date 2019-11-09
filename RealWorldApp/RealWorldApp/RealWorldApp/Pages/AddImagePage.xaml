@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RealWorldApp.Pages.AddImagePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Text="Choose Images"
+                       Margin="10"
+                       TextColor="#303F9F"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Title" />
+                <FlexLayout VerticalOptions="CenterAndExpand"
+                            Wrap="Wrap"
+                            JustifyContent="SpaceEvenly">
+                    <Image Source="addImage.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="Img1">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapImg1" Tapped="TapImg1_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="addImage.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="Img2">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapImg2" Tapped="TapImg2_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="addImage.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="Img3">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapImg3" Tapped="TapImg3_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="addImage.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="Img4">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapImg4" Tapped="TapImg4_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="addImage.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="Img5">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapImg5" Tapped="TapImg5_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="addImage.png"
+                           HeightRequest="100"
+                           WidthRequest="100"
+                           x:Name="Img6">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TapImg6" Tapped="TapImg6_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </FlexLayout>
+
+                <Label Text="You can add up to six images"
+                       Margin="10"
+                       TextColor="#303F9F"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Subtitle" />
+                <Button Text="Done"
+                        VerticalOptions="EndAndExpand"
+                        TextColor="White"
+                        BackgroundColor="#303F9F"
+                        x:Name="BtnDone"
+                        Clicked="BtnDone_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
